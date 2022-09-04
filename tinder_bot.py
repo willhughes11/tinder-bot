@@ -115,15 +115,17 @@ class TinderBotV1():
             for i in range(1,len(buttons)+1):
                 if len(buttons) > 1:
                     find_and_click(driver,f'//*[@id="c-1560500889"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[3]/div[1]/div[2]/button[{i}]', False)
+                time.sleep(0.5)
                 png = driver.get_screenshot_as_png()
                 im = Image.open(BytesIO(png))
                 im = im.crop((left, top, right, bottom))
                 rgb_im = im.convert('RGB')
+                buffered = BytesIO()
                 rgb_im.save(buffered, format="JPEG")
-                rgb_im.save("img1.png","PNG")
+                # rgb_im.save(f"img_{i}.png","PNG")
                 img_str = base64.b64encode(buffered.getvalue())
                 images.append(img_str.decode('utf-8'))
-
+            
             self.match_decision(images)
 
             return likes
