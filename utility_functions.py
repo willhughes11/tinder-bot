@@ -67,17 +67,9 @@ def wait_to_find_by_selector(driver, selector, wait_time):
     
     return True
 
-def get_rating(images,race=None,rating=None):
+def get_rating(host,port,images,race,rating):
     data=json.dumps({'images': images})
     
-    url = f'http://127.0.0.1:5000/rating?rating={rating}'
+    url = f'http://{host}:{port}/rating?race={race}&rating={rating}'
     response = requests.post(url, data=data, headers={'content-type': 'application/json'})
-    return json.loads(response.text)
-
-def post_tinder_api_request(url,api_token):
-    response = requests.post(url, headers={"x-auth-token": api_token})
-    return json.loads(response.text)
-
-def get_tinder_api_request(url,api_token):
-    response = requests.get(url, headers={"x-auth-token": api_token})
     return json.loads(response.text)
