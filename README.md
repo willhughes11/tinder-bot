@@ -11,12 +11,11 @@
 ## Command-Line Flags
 | Flags | Type | Description |
 |  --- | --- | --- |
-| `--remote` | `bool` | Open Chrome browser directly on device or start remote server to running chromedriver |
-| `--host` | `string` | Host runnning API |
-| `--port` | `string` | Port to access API |
-| `--use_api` | `bool` | Use API or interact with browser |
-| `--human_login` | `bool` | Automated or human interaction with browser |
-| `--pref_race` | `array` | Preferred race filter |
-| `--min_rating` | `float` | Minimum match rating |
-| `--like_count` | `int` | Amount of likes before exiting browser |
- 
+| `remote` | `bool` | Open Chrome browser directly on device or start remote server to running chromedriver |
+| `host` | `string` | Host runnning API |
+| `port` | `string` | Port to access API |
+| `use_api` | `bool` | Use API or interact with browser |
+| `human_login` | `bool` | Automated or human interaction with browser |
+| `pref_race` | `array` | Preferred race filter |
+| `min_rating` | `float` | Minimum match rating |
+| `like_count` | `int` | Amount of likes before exiting browser |
