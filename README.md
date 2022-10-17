@@ -2,8 +2,6 @@
 
 ### Signs in to Tinder, grabs potential match profile pictures, and sends them to flask server
 
-<br>
-
 ## Environment Variables
 * FB_USERNAME
 * FB_PASSWORD
