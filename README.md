@@ -1,6 +1,6 @@
 # Bot
 
-### Signs in to Tinder, grabs potential match profile pictures, and sends them to flask server
+### Signs in to Tinder, grabs potential match profile pictures, sends them to flask server, and once the server responds the bot will either swipe left or right.
 
 ## Environment Variables
 * FB_USERNAME
