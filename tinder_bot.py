@@ -81,7 +81,6 @@ class TinderBotV1():
             url = 'https://api.gotinder.com/v2/recs/core'
             data = get_tinder_api_request(url,api_token)
             for i in data['data']['results']:
-                print(like_limit)
                 if likes < like_limit:
                     user_id = i['user']['_id']
                     images = []
@@ -195,9 +194,12 @@ if __name__ == '__main__':
         tinder_bot = TinderBotV1(driver,host,port,human_login=human_login,use_api=use_api,pref_race=pref_race,min_rating=min_rating)
         tinder_bot.login()
         likes = 0
-        while likes < 1:
+        while likes < like_limit:
             likes += tinder_bot.get_match_images_and_swipe(likes, like_limit)
     except:
         print(traceback.print_exc())
     finally:
-        driver.quit()
+        try:
+            driver.quit()
+        except:
+            pass
