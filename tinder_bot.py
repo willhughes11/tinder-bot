@@ -71,7 +71,7 @@ class TinderBotV1():
 
             time.sleep(10)
         
-    def get_match_images_and_swipe(self,likes,like_limit=10):
+    def get_match_images_and_swipe(self,likes,like_limit):
         driver = self.driver
         use_api = self.use_api
 
@@ -81,6 +81,7 @@ class TinderBotV1():
             url = 'https://api.gotinder.com/v2/recs/core'
             data = get_tinder_api_request(url,api_token)
             for i in data['data']['results']:
+                print(like_limit)
                 if likes < like_limit:
                     user_id = i['user']['_id']
                     images = []
@@ -176,6 +177,7 @@ if __name__ == '__main__':
         use_api = args.use_api
         pref_race = args.pref_race
         min_rating = args.min_rating
+        like_limit = args.like_limit
 
         if platform == 'darwin':
             if remote:
@@ -194,7 +196,7 @@ if __name__ == '__main__':
         tinder_bot.login()
         likes = 0
         while likes < 1:
-            likes += tinder_bot.get_match_images_and_swipe(likes)
+            likes += tinder_bot.get_match_images_and_swipe(likes, like_limit)
     except:
         print(traceback.print_exc())
     finally:

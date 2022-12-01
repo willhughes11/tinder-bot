@@ -9,7 +9,7 @@ def get_input_args():
     parser.add_argument('--human_login', type=bool, default=False, help='Automated or human interaction with browser')
     parser.add_argument('--pref_race', type=list, default=[], help='Preferred race filter')
     parser.add_argument('--min_rating', type=float, default=2.5, help='Minimum match rating')
-    parser.add_argument('--like_count', type=int, default=10, help='Amount of likes before exiting browser')
+    parser.add_argument('--like_limit', type=int, default=10, help='Amount of likes before exiting browser')
 
     args = parser.parse_args()
 
