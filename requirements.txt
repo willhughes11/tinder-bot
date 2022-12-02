@@ -1,0 +1,6 @@
+beautifulsoup4==4.11.1
+Pillow==9.3.0
+python-dotenv==0.21.0
+requests==2.27.1
+selenium==4.7.0
+webdriver_manager==3.8.3
