@@ -196,6 +196,7 @@ if __name__ == '__main__':
         likes = 0
         while likes < like_limit:
             likes += tinder_bot.get_match_images_and_swipe(likes, like_limit)
+            print(likes)
     except:
         print(traceback.print_exc())
     finally:
